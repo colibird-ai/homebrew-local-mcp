@@ -4,8 +4,11 @@ Install [Local MCP](https://local-mcp.com) with Homebrew.
 
 ```sh
 brew tap lanchuske/local-mcp
+brew trust lanchuske/local-mcp
 brew install --cask local-mcp
 ```
+
+Recent versions of Homebrew refuse to load a cask from a third-party tap until you trust it; that is the second line. If your Homebrew does not have `brew trust`, skip it.
 
 Then open **Local MCP** from Applications. It appears in your menu bar and configures your AI clients automatically.
 
