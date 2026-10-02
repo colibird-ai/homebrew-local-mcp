@@ -3,8 +3,8 @@
 Install [Local MCP](https://local-mcp.com) with Homebrew.
 
 ```sh
-brew tap lanchuske/local-mcp
-brew trust lanchuske/local-mcp
+brew tap colibird-ai/local-mcp
+brew trust colibird-ai/local-mcp
 brew install --cask local-mcp
 ```
 
@@ -48,5 +48,5 @@ brew uninstall --zap --cask local-mcp
 ## Links
 
 - Website: https://local-mcp.com
-- Releases: https://github.com/lanchuske/local-mcp-releases
+- Releases: https://github.com/colibird-ai/local-mcp-releases
 - npm: https://www.npmjs.com/package/local-mcp
