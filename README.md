@@ -39,6 +39,8 @@ brew update && brew upgrade --cask local-mcp
 brew uninstall --cask local-mcp
 ```
 
+The uninstall also leaves the same `.uninstalled` markers as `npx local-mcp uninstall`, so an AI client that still launches the `npx local-mcp` wrapper gets a quiet exit instead of a reinstall. Use `brew uninstall --zap --cask local-mcp` to delete the app data too; the markers are kept. To reinstall, run `brew install --cask local-mcp` and open the app, or `npx local-mcp setup`.
+
 To also remove local configuration, caches and the LaunchAgent:
 
 ```sh
