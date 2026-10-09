@@ -14,11 +14,11 @@ Then open **Local MCP** from Applications. It appears in your menu bar and confi
 
 ## What it is
 
-A native macOS MCP server that connects Claude Desktop, Claude.ai, ChatGPT, Cursor, VS Code, Windsurf and Zed to the apps you actually use — Mail, Calendar, Contacts, iMessage, Microsoft Teams, Slack, WhatsApp, OneDrive, Notes, Reminders, OmniFocus, Microsoft 365, Office documents and your local files.
+A native macOS MCP server that connects Claude Desktop, Claude.ai, ChatGPT, Cursor, VS Code, Windsurf and Zed to the apps you actually use — Mail, Calendar, Contacts, iMessage, Microsoft Teams, Slack, WhatsApp, OneDrive, Notion, Notes, Reminders, OmniFocus, Microsoft 365, Office documents and your local files.
 
 The tools run on your Mac. No API keys, no tokens, no third-party service holding your data. Connecting a browser-based AI (claude.ai or ChatGPT on the web) additionally routes through an encrypted opt-in relay, which is never persisted server-side.
 
-Free. Signed with a Developer ID and notarized by Apple.
+Signed with a Developer ID and notarized by Apple.
 
 ## Requirements
 
