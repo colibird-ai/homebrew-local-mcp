@@ -15,10 +15,16 @@ cask "local-mcp" do
   auto_updates true
   depends_on macos: :ventura
 
-  app "LocalMCPTray.app"
+  # 3.0.423 renamed the app inside the DMG to LMCP.app (bundle id and signing unchanged);
+  # earlier DMGs still hold LocalMCPTray.app.
+  app(Gem::Version.new(version) >= Gem::Version.new("3.0.423") ? "LMCP.app" : "LocalMCPTray.app")
 
+  # The app migrates itself to LMCP.app on first launch, so an install made from an older cask
+  # may now sit under either name; remove both. (The npx helper is also LMCP.app but lives in the
+  # npm cache, never in /Applications.)
   uninstall launchctl: ["com.local-mcp.tray", "com.local-mcp.server"],
-            quit:      "com.local-mcp.tray"
+            quit:      "com.local-mcp.tray",
+            delete:    ["/Applications/LMCP.app", "/Applications/LocalMCPTray.app"]
 
   # Same markers `npx local-mcp uninstall` writes (lmcp-npm index.js, uninstallSentinelPaths): with
   # either present the npx wrapper that AI clients still launch exits quietly instead of
