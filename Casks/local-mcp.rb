@@ -12,6 +12,12 @@ cask "local-mcp" do
     strategy :sparkle
   end
 
+  # Retired: LMCP no longer ships through package managers. The cask stays so an existing install
+  # gets this message; `brew uninstall --cask local-mcp` still works.
+  disable! date:    "2026-11-05",
+           because: "is now installed from https://www.local-mcp.com/download " \
+                    "or with npx -y local-mcp@latest setup"
+
   auto_updates true
   depends_on macos: :ventura
 
