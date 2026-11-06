@@ -1,29 +1,54 @@
-# Local MCP — Homebrew tap (retired)
+# Local MCP — Homebrew tap
 
-**This tap no longer installs Local MCP.** The `local-mcp` cask was disabled on 2026-11-05.
+Install [Local MCP](https://local-mcp.com) with Homebrew.
 
-Install [Local MCP](https://local-mcp.com) from the website:
+```sh
+brew tap colibird-ai/local-mcp
+brew trust colibird-ai/local-mcp
+brew install --cask local-mcp
+```
 
-- Download the app: https://www.local-mcp.com/download
-- Or, from a terminal: `npx -y local-mcp@latest setup`
+Recent versions of Homebrew refuse to load a cask from a third-party tap until you trust it; that is the second line. If your Homebrew does not have `brew trust`, skip it.
 
-## If you installed it with Homebrew
+Then open **Local MCP** from Applications. It appears in your menu bar and configures your AI clients automatically.
 
-The app keeps working and updates itself. Homebrew will show that the cask is disabled; uninstalling still works:
+## What it is
+
+A native macOS MCP server that connects Claude Desktop, Claude.ai, ChatGPT, Cursor, VS Code, Windsurf and Zed to the apps you actually use — Mail, Calendar, Contacts, iMessage, Microsoft Teams, Slack, WhatsApp, OneDrive, Notion, Notes, Reminders, OmniFocus, Microsoft 365, Office documents and your local files.
+
+The tools run on your Mac. No API keys, no tokens, no third-party service holding your data. Connecting a browser-based AI (claude.ai or ChatGPT on the web) additionally routes through an encrypted opt-in relay, which is never persisted server-side.
+
+Signed with a Developer ID and notarized by Apple.
+
+## Requirements
+
+- macOS 13 (Ventura) or later
+- Apple silicon or Intel
+
+## Updating
+
+The app updates itself, so `brew upgrade` is not normally needed — the cask is marked `auto_updates true`. To move the Homebrew-recorded version forward anyway:
+
+```sh
+brew update && brew upgrade --cask local-mcp
+```
+
+## Uninstalling
 
 ```sh
 brew uninstall --cask local-mcp
 ```
 
-The uninstall leaves the same `.uninstalled` markers as `npx local-mcp uninstall`, so an AI client that still launches the `npx local-mcp` wrapper gets a quiet exit instead of a reinstall. To also delete the app data (the markers are kept):
+The uninstall also leaves the same `.uninstalled` markers as `npx local-mcp uninstall`, so an AI client that still launches the `npx local-mcp` wrapper gets a quiet exit instead of a reinstall. Use `brew uninstall --zap --cask local-mcp` to delete the app data too; the markers are kept. To reinstall, run `brew install --cask local-mcp` and open the app, or `npx local-mcp setup`.
+
+To also remove local configuration, caches and the LaunchAgent:
 
 ```sh
 brew uninstall --zap --cask local-mcp
 ```
 
-Then you can remove the tap with `brew untap colibird-ai/local-mcp`.
-
 ## Links
 
 - Website: https://local-mcp.com
+- Releases: https://github.com/colibird-ai/local-mcp-releases
 - npm: https://www.npmjs.com/package/local-mcp
