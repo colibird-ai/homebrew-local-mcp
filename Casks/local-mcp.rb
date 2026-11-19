@@ -1,6 +1,6 @@
 cask "local-mcp" do
-  version "3.0.448"
-  sha256 "8f373c0bb942811f922e9bc3765617bc08ea9d7679e6863b27c5d3e6ed782245"
+  version "3.0.449"
+  sha256 "8f3cef3fd776c9f139fc6e45de80363e1317efc9ec6a5c3c2fb544fa1845754e"
 
   url "https://download.local-mcp.com/LocalMCP-#{version}.dmg"
   name "Local MCP"
